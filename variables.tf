@@ -58,13 +58,13 @@ variable "db_instance_count" {
 variable "sg_ingress" {
   description = "The ID of the VPC in which the endpoint will be used"
   type        = list(string)
-  default = null
+  default     = null
 }
 
 variable "cidr_ingress" {
   description = "The ID of the VPC in which the endpoint will be used"
   type        = list(string)
-  default = null
+  default     = null
 }
 
 variable "publicly_accessible" {
@@ -89,4 +89,16 @@ variable "postgresql_family" {
   description = "Database administrator password"
   type        = string
   default     = "aurora-postgresql14"
+}
+
+variable "time_zone" {
+  description = "Timezone set to DB"
+  type        = string
+  default     = "Asia/Tokyo"
+}
+
+variable "max_connections" {
+  description = "Max connections DB"
+  type        = number
+  default     = 1024
 }
